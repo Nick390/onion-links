@@ -15,22 +15,22 @@
     </style>
 </head>
 <body class="bg-secondary">
-<!--ملاحظة عند إضافة فرع جديد-->
+<!--Note when adding a new branch-->
 <div class="container mt-3">
     <h4 class="text-white">Add new Status</h4>
     <hr>
     </div>
 <div class="container">
     <?php
-//نص إرسال النموذج
+//The text when the form is submitted
 if(isset($_POST['submit'])) {
 
       $Status = $_POST['Status'];
       $Color = $_POST['Color'];
 
-      //نص إضافة معلومات لقاعدة البيانات
+      //Text when adding data to the database
       $result ="INSERT INTO `status` (`Status`, `Color`,`Data_Added`) VALUES ('$Status', '$Color', CURRENT_TIMESTAMP);";
-      //نص الملاحضات في حالة وجود خطئ
+      //Notes text in case of an error
       if(performQuery($result)){
         echo('<div class="alert alert-success" role="alert">
         A new Status have been add <a href="../" class="badge badge-info"> See all links </a>
@@ -78,7 +78,7 @@ if(isset($_POST['submit'])) {
             </div>
     </div>
 </form>
-<!--سكربت لإظهار العناصر باللون الأحمر في حالة عدم إدخال بيانات-->
+<!--Script to show items in red when no data is entered-->
 <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
