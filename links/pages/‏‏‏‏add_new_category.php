@@ -15,21 +15,21 @@
     </style>
 </head>
 <body class="bg-secondary">
-<!--ملاحظة عند إضافة فرع جديد-->
+<!--Note when adding a new category-->
 <div class="container mt-3">
     <h4 class="text-white">Add new Category</h4>
     <hr>
     </div>
 <div class="container">
     <?php
-//نص إرسال النموذج
+//The text when the form is submitted
 if(isset($_POST['submit'])) {
 
       $Category = $_POST['Category'];
 
-      //نص إضافة معلومات لقاعدة البيانات
+      //Text when adding data to the database
       $result ="INSERT INTO `category` (`Category`, `Data_Added`) VALUES ('$Category', CURRENT_TIMESTAMP);";
-      //نص الملاحضات في حالة وجود خطئ
+      //Notes text in case of an error
       if(performQuery($result)){
         echo('<div class="alert alert-success" role="alert">
         A new category have been add <a href="../" class="badge badge-info"> See all links </a>
@@ -59,7 +59,7 @@ if(isset($_POST['submit'])) {
             </div>
     </div>
 </form>
-<!--سكربت لإظهار العناصر باللون الأحمر في حالة عدم إدخال بيانات-->
+<!--Script to show items in red when no data is entered-->
 <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
